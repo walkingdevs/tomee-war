@@ -26,7 +26,7 @@ public class PlanetRsTest extends Assert {
     @Test
     public void testXml() throws Exception {
         Planet planet = WebClient.create(webappUrl.toURI())
-                .path("planet")
+                .path("rs/planet")
                 .accept(MediaType.APPLICATION_XML_TYPE)
                 .get(Planet.class);
         assertEquals("Uranus", planet.getName());
@@ -35,7 +35,7 @@ public class PlanetRsTest extends Assert {
     @Test
     public void testJson() throws Exception {
         Planet planet = WebClient.create(webappUrl.toURI())
-                .path("planet")
+                .path("rs/planet")
                 .accept(MediaType.APPLICATION_JSON_TYPE)
                 .get(Planet.class);
         assertEquals("Uranus", planet.getName());
