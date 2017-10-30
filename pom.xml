@@ -4,12 +4,12 @@
     <parent>
         <groupId>walkingdevs</groupId>
         <artifactId>archetypes-parent</artifactId>
-        <version>5</version>
+        <version>9</version>
         <relativePath/>
     </parent>
 
     <artifactId>tomee-war</artifactId>
-    <version>6.0</version>
+    <version>1.7.5</version>
     <packaging>maven-archetype</packaging>
 
     <build>

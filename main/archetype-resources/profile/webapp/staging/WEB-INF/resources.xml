@@ -4,7 +4,7 @@
         password =
         passwordCipher = PlainText
         jdbcDriver = org.postgresql.Driver
-        jdbcUrl = jdbc:postgresql://postgres:5432/postgres
+        jdbcUrl = jdbc:postgresql://pg:5432/postgres
         maxActive = 20
         maxIdle = 20
         jtaManaged = true
