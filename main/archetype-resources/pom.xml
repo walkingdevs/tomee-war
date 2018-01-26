@@ -16,23 +16,16 @@
     <dependencies>
         <!-- TomEE provided -->
         <dependency>
-            <groupId>org.apache.openejb</groupId>
+            <groupId>org.apache.tomee</groupId>
             <artifactId>javaee-api</artifactId>
-            <version>6.0-6</version>
+            <version>7.0-1</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.3.2</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.openejb</groupId>
-            <artifactId>openejb-core</artifactId>
-            <version>4.7.5</version>
+            <version>3.5</version>
             <scope>provided</scope>
         </dependency>
 
@@ -40,14 +33,14 @@
         <dependency>
             <groupId>org.apache.openejb</groupId>
             <artifactId>tomee-jaxrs</artifactId>
-            <version>${tomee-version}</version>
+            <version>${tomee}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.apache.openejb</groupId>
             <artifactId>arquillian-tomee-embedded</artifactId>
-            <version>${tomee-version}</version>
+            <version>${tomee}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -78,9 +71,10 @@
             <plugin>
                 <groupId>org.apache.openejb.maven</groupId>
                 <artifactId>tomee-maven-plugin</artifactId>
-                <version>${tomee-version}</version>
+                <version>${tomee}</version>
                 <configuration>
                     <tomeeClassifier>plume</tomeeClassifier>
+                    <forceJspDevelopment>false</forceJspDevelopment>
                     <execFile>${project.build.directory}/app.jar</execFile>
                     <config>profile/tomee/${profile}</config>
                 </configuration>
@@ -98,7 +92,7 @@
                         <artifactId>tomee-maven-plugin</artifactId>
                         <configuration>
                             <libs>
-                                <lib>org.postgresql:postgresql:${postgres-driver-version}</lib>
+                                <lib>org.postgresql:postgresql:${pg-driver}</lib>
                             </libs>
                         </configuration>
                     </plugin>
@@ -108,7 +102,6 @@
                 <profile>staging</profile>
             </properties>
         </profile>
-
         <profile>
             <id>prod</id>
             <build>
@@ -118,7 +111,7 @@
                         <artifactId>tomee-maven-plugin</artifactId>
                         <configuration>
                             <libs>
-                                <lib>org.postgresql:postgresql:${postgres-driver-version}</lib>
+                                <lib>org.postgresql:postgresql:${pg-driver}</lib>
                             </libs>
                         </configuration>
                     </plugin>
@@ -128,7 +121,6 @@
                 <profile>prod</profile>
             </properties>
         </profile>
-
         <profile>
             <id>rebel</id>
             <build>
@@ -141,7 +133,7 @@
                                 -agentpath:${project.build.directory}/apache-tomee/lib/libjrebel${sun.arch.data.model}.${lib-extension}
                             </args>
                             <libs>
-                                <lib>unzip:jrebel:jrebel:${jrebel-version}</lib>
+                                <lib>unzip:jrebel:jrebel:${jrebel}</lib>
                             </libs>
                         </configuration>
                     </plugin>
@@ -163,9 +155,8 @@
 
     <properties>
         <profile>dev</profile>
-        <tomee-version>1.7.5</tomee-version>
-        <tomee-plugin-version>${tomee-version}</tomee-plugin-version>
-        <postgres-driver-version>42.1.4</postgres-driver-version>
-        <jrebel-version>7.1.1</jrebel-version>
+        <tomee>7.0.4</tomee>
+        <pg-driver>42.2.1</pg-driver>
+        <jrebel>7.1.1</jrebel>
     </properties>
 </project>
