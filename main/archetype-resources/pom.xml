@@ -4,7 +4,7 @@
     <parent>
         <groupId>walkingdevs</groupId>
         <artifactId>parent</artifactId>
-        <version>9</version>
+        <version>10</version>
         <relativePath/>
     </parent>
 
@@ -145,13 +145,6 @@
             </build>
         </profile>
     </profiles>
-
-    <repositories>
-        <repository>
-            <id>bintray</id>
-            <url>http://dl.bintray.com/walkingdevs/mvn</url>
-        </repository>
-    </repositories>
 
     <properties>
         <profile>dev</profile>

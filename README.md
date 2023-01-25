@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/walkingdevs/tomee-war.svg?branch=master)](https://travis-ci.org/walkingdevs/tomee-war)
-[![Download](https://api.bintray.com/packages/walkingdevs/mvn/tomee-war/images/download.svg)](https://bintray.com/walkingdevs/mvn/tomee-war/_latestVersion)
 
 ## What is it?
 - Generic JEE 6 WAR template based on TomEE 1.7.x
@@ -17,7 +16,3 @@ CLI:
         -DgroupId=test \
         -DartifactId=app \
         -Dversion=0
-
-## Something wrong?
-
-Let's discuss. I am a very discussful guy
